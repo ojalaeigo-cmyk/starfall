@@ -1,7 +1,7 @@
 {
   "name": "Star King",
   "short_name": "Star King",
-  "description": "Star King stable English build with leaderboard.",
+  "description": "Star King final rules build.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
