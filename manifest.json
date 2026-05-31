@@ -1,8 +1,8 @@
 {
   "name": "Star King",
   "short_name": "Star King",
-  "description": "Star King: bosses scale 40% stronger per weapon level.",
-  "start_url": "./?bossweapon40=1",
+  "description": "Star King with green stars as weapon upgrades.",
+  "start_url": "./?bossweapon40fixed=1",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",

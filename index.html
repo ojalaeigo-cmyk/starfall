@@ -42,7 +42,7 @@ button{border:0;border-radius:999px;padding:15px 28px;font-size:18px;font-weight
 </div>
 <input id="playerName" maxlength="18" autocomplete="nickname">
 <p class="small" style="color:#8cffb1;font-weight:bold">GREEN STARS = WEAPON UPGRADE · SHIP AUTO-FIRES BOSS</p>
-<p class="small" style="color:#8cffb1;font-weight:bold">BOSS HP SCALES WITH WEAPON · +40% BOSS STRENGTH PER WEAPON LEVEL</p>
+<p class="small" style="color:#8cffb1;font-weight:bold">BOSS HP SCALES WITH WEAPON · +40% PER WEAPON LEVEL</p>
 <p id="wakeStatus" class="small" style="color:#ffd966">Screen lock: waiting for Start</p>
 <button id="startBtn">Start</button>
 </div></div>
@@ -190,8 +190,9 @@ function levelDifficultyFactor(){
   return f;
 }
 function bossMaxHp(){
-  const weaponBoost=1+(Math.max(1,weaponLevel)-1)*0.40;
-  return Math.ceil((80+level*18)*levelDifficultyFactor()*weaponBoost);
+  const wl = (typeof weaponLevel==="number" ? weaponLevel : 1);
+  const weaponBoost = 1 + (Math.max(1,wl)-1)*0.40;
+  return Math.ceil((80 + level*18) * levelDifficultyFactor() * weaponBoost);
 }
 
 function startBoss(){sfx("boss");items=[];boxes=[];boss={x:W/2,y:100*S,r:34*S,hp:bossMaxHp(),max:bossMaxHp(),t:0};addText(W/2,H*.3,T.boss+" "+level,true);addText(W/2,H*.38,"AUTO FIRE",true)}
@@ -205,7 +206,7 @@ if(boss.t%140<45)player.targetX+=(boss.x-player.targetX)*0.004;
 function hitCircleRect(o){let rx=player.x-player.w*S/2,ry=player.y-player.h*S/2,rw=player.w*S,rh=player.h*S;let hx=clamp(o.x,rx,rx+rw),hy=clamp(o.y,ry,ry+rh),dx=o.x-hx,dy=o.y-hy;return dx*dx+dy*dy<o.r*o.r}
 function collect(i){if(i.type==="star"){sfx("star");stars++;score+=5;boom(i.x,i.y,true);if(stars%5===0)upgradeShield();if(score>=nextBonus){spawnBox();nextBonus+=100}}else if(i.type==="attack"){if(boss){weaponLevel=Math.min(5,weaponLevel+1);addText(i.x,i.y,"WEAPON +1 · BOSS +40%",true);boom(i.x,i.y,true)}score+=10}else damageShield(25)}
 
-function update(){if(!running||paused)return;if(hasTilt&&!touch)player.targetX=W/2+tilt*(W*.42);player.targetX=clamp(player.targetX,player.w*S/2,W-player.w*S/2);player.x+=clamp((player.targetX-player.x)*.20,-10*S,10*S);
+function update(){if(!running||paused)return;if(boss&&frame%20===0)playerShoot();if(hasTilt&&!touch)player.targetX=W/2+tilt*(W*.42);player.targetX=clamp(player.targetX,player.w*S/2,W-player.w*S/2);player.x+=clamp((player.targetX-player.x)*.20,-10*S,10*S);
 if(!boss&&score>=nextLevelScore)startBoss();if(boss)bossSpawn();else{spawnT++;if(spawnT>Math.max(18,62-level)){spawnT=0;spawnStar()}}
 autoFireT++;
 if(boss && autoFireT>16){autoFireT=0;playerShoot();}
