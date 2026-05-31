@@ -1,9 +1,23 @@
-STAR KING - ENGLISH ONLY + LEADERBOARD
-
-Muudetud:
-- keelemenüü eemaldatud
-- ainult English
-- nime sisestus alles
-- mängu lõpus kuvatakse edetabel
-- edetabel salvestub localStorage'i
-- HARD MODE tekst eemaldatud
+{
+  "name": "Star King",
+  "short_name": "Star King",
+  "description": "Star King repaired English-only build with leaderboard.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#071018",
+  "theme_color": "#071018",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
