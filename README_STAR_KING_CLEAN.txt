@@ -1,2 +1,2 @@
-STAR KING STABLE
-English only. Name field. Leaderboard. No language menu. No HARD MODE text.
+STAR KING - BOSS WEAPON 40%
+Boss HP scales with level difficulty. Each weapon level makes boss 40% stronger.
