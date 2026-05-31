@@ -1,7 +1,7 @@
 {
   "name": "Star King",
   "short_name": "Star King",
-  "description": "Star King repaired English-only build with leaderboard.",
+  "description": "Star King fixed English-only build with leaderboard.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

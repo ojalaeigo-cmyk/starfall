@@ -94,7 +94,7 @@ function sfx(kind){
 
 
 function applyLang(code){lang=code;T=I18N[code]||I18N.en;document.documentElement.lang=code;
-$("startTitle").textContent=T.startTitle;$("chooseLabel").textContent=T.choose;$("intro").textContent=T.intro;
+$("startTitle").textContent=T.startTitle;$("intro").textContent=T.intro;
 ["rule1","rule2","rule3","rule4","rule5"].forEach(id=>$(id).textContent=T[id]);
 const pn=$("playerName"); if(pn) pn.placeholder=T.name;$("startBtn").textContent=T.start;$("resumeBtn").textContent=T.resume;$("againBtn").textContent=T.again;
 $("scoreLabel").textContent=T.score;$("livesLabel").textContent=T.lives;$("shieldLabel").textContent=T.shield;$("pauseTitle").textContent=T.pause;$("pauseText").textContent=T.pause;
@@ -128,7 +128,7 @@ function saveLeaderboard(){
   return list;
 }
 function renderLeaderboard(list){
-  const el=$("leaderboardList"); if(!el)return;
+  const el=$("leaderboardList");if(!el)return;
   if(!Array.isArray(list)||!list.length){el.innerHTML="<div>No results yet.</div>";return;}
   el.innerHTML=list.map((r,i)=>`<div>${i+1}. <b>${safeText(r.name)}</b> — ${Number(r.score)||0} · Level ${Number(r.level)||1}</div>`).join("");
 }

@@ -1,2 +1,2 @@
-STAR KING REPAIRED
-English only, name field, leaderboard, no HARD MODE text.
+STAR KING FIXED
+English only. Name field and leaderboard restored. Language menu and hard mode text removed.
