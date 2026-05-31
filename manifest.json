@@ -1,8 +1,8 @@
 {
   "name": "Star King",
   "short_name": "Star King",
-  "description": "Star King working build.",
-  "start_url": "./",
+  "description": "Special colored star messages, boss 3x HP, boss phase 3x slower.",
+  "start_url": "./?specialstarsboss3x=2",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
