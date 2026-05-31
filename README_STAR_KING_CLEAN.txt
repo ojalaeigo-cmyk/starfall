@@ -1,23 +1,2 @@
-{
-  "name": "Star King",
-  "short_name": "Star King",
-  "description": "Star King fixed English-only build with leaderboard.",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#071018",
-  "theme_color": "#071018",
-  "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}
+STAR KING STABLE
+English only. Name field. Leaderboard. No language menu. No HARD MODE text.
