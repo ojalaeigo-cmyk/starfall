@@ -1,8 +1,8 @@
 {
-  "name": "Star King Hard Mode",
+  "name": "Star King",
   "short_name": "Star King",
-  "description": "Star King hard mode: harder patterns without simply increasing speed.",
-  "start_url": "./?hardmode=1",
+  "description": "Star King English-only with name field, shield, sound and boss fights.",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
